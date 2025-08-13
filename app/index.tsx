@@ -1,38 +1,39 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Image source={require("../assets/images/adaptive-icon.png")} style={styles.image} />
-      <Text style={styles.heading}>Your app starts here</Text>
-      <Text style={styles.text}>In just a moment, you’ll see your app begin to take shape.</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <Text style={styles.heading}>Welcome to your app</Text>
+        <Text style={styles.text}>Ready to build something amazing?</Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#FAFAFA",
+  },
+  content: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    gap: 8,
     padding: 32,
+    gap: 16,
   },
   heading: {
-    fontSize: 24,
-    fontWeight: "bold",
+    fontSize: 28,
+    fontWeight: "600",
     textAlign: "center",
-    color: "#181818", // equivalent to text-blue-400
+    color: "#1A1A1A",
   },
   text: {
-    fontSize: 18,
-    fontWeight: "medium",
+    fontSize: 16,
     textAlign: "center",
-    color: "#4D4D4D",
-  },
-  image: {
-    width: 80,
-    height: 80,
-    marginBottom: 16,
+    color: "#666666",
+    lineHeight: 24,
   },
 });
